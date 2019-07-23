@@ -24,7 +24,7 @@
 						width: len,
 						height: len,
 						'animation-delay': `${_.random(1, 15, true)}s`,
-						'animation-duration': `${_.random(10, 20, true)}s`,
+						'animation-duration': `${_.random(7, 23, true)}s`,
 					}
 				}
 			}

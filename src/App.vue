@@ -1,29 +1,23 @@
 <template>
 	<div id="app">
-		<rise/>
-		<router-view/>
+		<rise-background/>
+		<response-navigation/>
+		<router-view style="padding-top: var(--nav-height)"/>
 	</div>
 </template>
 
 <script>
 
-	import Rise from "@/components/background/rise";
+	import riseBackground from "@/components/background/riseBackground";
+	import ResponseNavigation from "@/components/navigation/responseNavigation";
+
 	export default {
-		components: {Rise}
+		components: {ResponseNavigation, riseBackground}
 	}
 </script>
 
 <style lang="scss">
-	#app {
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-	}
-	body{
-		margin: 0;
-		padding: 0;
-	}
+
+
 </style>
 

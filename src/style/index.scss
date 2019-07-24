@@ -1,8 +1,24 @@
+@import "variables";
 @import "font";
+@import "common/index";
 
-
-#app{
+#app {
   background: linear-gradient(to right, #3a6186, #89253e);
   width: 100vw;
   height: 100vh;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: var(--common-font-color);
 }
+
+body {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+

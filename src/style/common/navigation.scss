@@ -1,0 +1,149 @@
+header {
+  background: var(--nav-background-mobile);
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: var(--nav-height);
+
+  .logo {
+    margin: 0 !important;
+    line-height: var(--nav-height);
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  #nav-toggle {
+    display: none;
+
+    &:checked ~ nav {
+      transform: scale(1, 1);
+    }
+
+    &:checked ~ nav a {
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out 0.2s;
+    }
+  }
+
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    span {
+      &, &::before, &::after {
+        display: block;
+        background: white;
+        height: 2px;
+        width: 1.5rem;
+        border-radius: 2px;
+        position: absolute;
+        content: '';
+      }
+
+      &::before {
+        bottom: 7px;
+      }
+
+      &::after {
+        top: 7px;
+      }
+    }
+  }
+
+  nav {
+    background: var(--nav-background-mobile);
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 0.2s;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          opacity: 0;
+          transition: opacity 0s;
+
+          &:hover {
+            color: var(--common-font-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+  header {
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+
+    .nav-toggle-label {
+      display: none;
+    }
+
+    .logo {
+      grid-column: 2 / 3;
+    }
+
+    nav {
+      all: unset;
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          margin-bottom: 0;
+          margin-left: 3rem;
+
+          a {
+            opacity: 1 !important;
+            position: relative;
+
+            &::before {
+              content: '';
+              display: block;
+              height: 5px;
+              background: var(--common-font-color);
+              position: absolute;
+              top: -0.7rem;
+              right: 0;
+              left: 0;
+              transform: scale(0, 1);
+              transition: transform 0.2s;
+            }
+
+            &:hover::before {
+              transform: scale(1, 1);
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+}

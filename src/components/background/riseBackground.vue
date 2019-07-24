@@ -8,7 +8,7 @@
 	import _ from 'lodash'
 
 	export default {
-		name: "rise",
+		name: "riseBackground",
 		props: {
 			amount: {
 				type: Number,

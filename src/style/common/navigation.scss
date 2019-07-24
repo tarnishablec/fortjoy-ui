@@ -10,6 +10,8 @@ header {
     line-height: var(--nav-height);
     font-size: 2rem;
     text-transform: uppercase;
+    top: 3px;
+    position: relative;
   }
 
   #nav-toggle {
@@ -32,6 +34,7 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     span {
       transform: rotate(-90deg);

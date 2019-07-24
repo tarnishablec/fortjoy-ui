@@ -4,8 +4,8 @@
 		<input type="checkbox" id="nav-toggle">
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
+				<li><router-link to="/">Home</router-link></li>
+				<li><router-link to="/about">About</router-link></li>
 				<li><a href="#">Blog</a></li>
 				<li><a href="#">Contact</a></li>
 			</ul>

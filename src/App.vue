@@ -2,7 +2,11 @@
 	<div id="app">
 		<rise-background/>
 		<response-navigation/>
-		<router-view style="padding-top: var(--nav-height)"/>
+		<div class="app-main">
+			<transition name="fade-transform" mode="out-in">
+				<router-view/>
+			</transition>
+		</div>
 	</div>
 </template>
 

@@ -11,6 +11,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: var(--common-font-color);
+  overflow: hidden;
 }
 
 body {
@@ -21,4 +22,34 @@ body {
   box-sizing: border-box;
 }
 
+.app-main {
+  padding-top: var(--nav-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
 
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.2s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a1a3a9;
+  border-radius: 1rem;
+}

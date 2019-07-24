@@ -11,7 +11,7 @@
 			</ul>
 		</nav>
 		<label for="nav-toggle" class="nav-toggle-label">
-			<span></span>
+			<span>|||</span>
 		</label>
 	</header>
 </template>

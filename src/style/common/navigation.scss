@@ -27,9 +27,11 @@ header.responsive-nav {
       transform: scale(1, 1);
     }
 
-    &:checked ~ nav a {
-      opacity: 1;
-      transition: opacity 0.25s ease-in-out 0.2s;
+    &:checked ~ nav {
+      a {
+        opacity: 1;
+        transition: opacity 0.25s ease-in-out 0.2s;
+      }
     }
   }
 
@@ -95,11 +97,12 @@ header.responsive-nav {
 
 
     &.inverse {
-      background: rgba(255,255,255,0.8) !important;
+      background: rgba(255, 255, 255, 0.8);
       color: var(--common-text-color);
-      nav{
-        li{
-          a{
+
+      nav {
+        li {
+          a {
             color: var(--common-text-color);
           }
         }
@@ -135,7 +138,7 @@ header.responsive-nav {
           }
 
           a {
-            opacity: 1 !important;
+            opacity: 1;
             position: relative;
 
             &:hover {
@@ -146,7 +149,7 @@ header.responsive-nav {
               content: '';
               display: block;
               height: 5px;
-              background: var(--common-font-color);
+              background: var(--common-text-color);
               position: absolute;
               top: -0.7rem;
               right: 0;

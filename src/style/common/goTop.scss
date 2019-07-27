@@ -1,0 +1,37 @@
+.go-top {
+  background: #42b983;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  align-items: center;
+  opacity: 0;
+  display: inline-flex;
+  z-index: 998;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out 0.3s;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .fas {
+    font-size: 1.5rem;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .go-top {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    .fas {
+      font-size: 2rem;
+    }
+  }
+}

@@ -60,3 +60,7 @@ body {
   background-color: #a1a3a9;
   border-radius: 1rem;
 }
+
+::-webkit-scrollbar-corner{
+  background: transparent;
+}

@@ -1,6 +1,8 @@
 <template>
 	<div class="go-top" @click="goTop">
-		<i class="fas fa-arrow-up"></i>
+		<svg class="icon" aria-hidden="true">
+			<use xlink:href="#arrowup"></use>
+		</svg>
 	</div>
 </template>
 

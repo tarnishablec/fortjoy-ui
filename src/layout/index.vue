@@ -2,30 +2,34 @@
 	<div class="layout">
 		<rise-background/>
 		<response-navigation/>
-		<div class="app-main">
-			<transition name="fade-transform" mode="out-in">
-				<router-view/>
-			</transition>
-		</div>
+		<app-main/>
 	</div>
 </template>
 
 <script>
 	import RiseBackground from "@/components/background/riseBackground";
 	import ResponseNavigation from "@/components/navigation/responseNavigation";
+	import AppMain from "@/layout/appMain";
 
 	export default {
 		name: "layout",
-		components: {ResponseNavigation, RiseBackground},
+		components: {AppMain, ResponseNavigation, RiseBackground},
 		mounted() {
 			const header = document.querySelector("header.responsive-nav");
+			const sd = document.querySelector(".scroll-detector");
 			const options = {};
 
 			const headerObserver = new IntersectionObserver((entries) => {
-				console.log(entries);
+				entries.forEach(e => {
+					if (!e.isIntersecting){
+						header.classList.add("inverse");
+					}else {
+						header.classList.remove("inverse");
+					}
+				})
 			}, options);
 
-			headerObserver.observe(header);
+			headerObserver.observe(sd);
 		}
 	}
 </script>

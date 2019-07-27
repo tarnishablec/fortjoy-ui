@@ -5,6 +5,7 @@ header.responsive-nav {
   width: 100%;
   height: var(--nav-height);
 
+
   .logo {
     margin: 0;
     line-height: var(--nav-height);
@@ -90,6 +91,20 @@ header.responsive-nav {
     background: transparent;
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    transition: 0.2s;
+
+
+    &.inverse {
+      background: rgba(255,255,255,0.8) !important;
+      color: var(--common-text-color);
+      nav{
+        li{
+          a{
+            color: var(--common-text-color);
+          }
+        }
+      }
+    }
 
     .nav-toggle-label {
       display: none;

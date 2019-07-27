@@ -25,7 +25,12 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
-  padding: var(--nav-height) calc((100vw - var(--app-main-width-max)) / 2) 0;
+  padding: 0 calc((100vw - var(--app-main-width-max)) / 2) 0;
+
+  .scroll-detector{
+    height: var(--nav-height);
+    width: 100%;
+  }
 }
 
 .fade-transform-leave-active,

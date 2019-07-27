@@ -9,7 +9,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: var(--common-font-color);
+  color: var(--common-text-color);
   overflow: hidden;
 }
 
@@ -30,7 +30,7 @@ body {
 
 .fade-transform-leave-active,
 .fade-transform-enter-active {
-  transition: all 0.2s;
+  transition: 0.2s;
 }
 
 .fade-transform-enter {
@@ -45,6 +45,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 0.5rem;
   background: transparent;
 }
 

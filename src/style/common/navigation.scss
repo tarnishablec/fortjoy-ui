@@ -1,4 +1,4 @@
-header {
+header.responsive-nav {
   background: var(--nav-background-mobile);
   position: fixed;
   z-index: 999;
@@ -6,14 +6,14 @@ header {
   height: var(--nav-height);
 
   .logo {
-    margin: 0 !important;
+    margin: 0;
     line-height: var(--nav-height);
     font-size: 2rem;
     text-transform: uppercase;
 
     a {
       text-decoration: none;
-      color: var(--common-font-color);
+      color: var(--common-text-color);
       top: 3px;
       position: relative;
     }
@@ -67,7 +67,7 @@ header {
 
         a {
           display: block;
-          color: white;
+          color: var(--inverse-text-color);
           text-decoration: none;
           font-size: 1.1rem;
           text-transform: uppercase;
@@ -75,7 +75,7 @@ header {
           transition: opacity 0s;
 
           &:hover {
-            color: var(--common-font-color);
+            color: var(--common-text-color);
             box-shadow: inset 0 -1px 0 rgba(255, 255, 250, 0.3);
           }
         }
@@ -86,7 +86,7 @@ header {
 
 
 @media screen and (min-width: 800px) {
-  header {
+  header.responsive-nav {
     background: transparent;
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;

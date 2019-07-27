@@ -1,5 +1,5 @@
 <template functional>
-	<header>
+	<header class="responsive-nav">
 		<h3 class="logo font-indie-flower">
 			<router-link to="/">fortjoy</router-link>
 		</h3>

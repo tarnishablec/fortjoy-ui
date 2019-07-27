@@ -22,10 +22,10 @@ body {
 }
 
 .app-main {
-  padding-top: var(--nav-height);
   overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
+  padding: var(--nav-height) calc((100vw - var(--app-main-width-max)) / 2) 0;
 }
 
 .fade-transform-leave-active,

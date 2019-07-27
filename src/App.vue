@@ -1,22 +1,13 @@
 <template>
-	<div id="app">
-		<rise-background/>
-		<response-navigation/>
-		<div class="app-main">
-			<transition name="fade-transform" mode="out-in">
-				<router-view/>
-			</transition>
-		</div>
-	</div>
+	<layout id="app"/>
 </template>
 
 <script>
 
-	import riseBackground from "@/components/background/riseBackground";
-	import ResponseNavigation from "@/components/navigation/responseNavigation";
+	import Layout from "@/layout/index";
 
 	export default {
-		components: {ResponseNavigation, riseBackground}
+		components: {Layout}
 	}
 </script>
 

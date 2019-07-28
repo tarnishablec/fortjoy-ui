@@ -45,7 +45,8 @@
 	}
 
 	.box-area {
-		background: linear-gradient(to right, #3a6186, #89253e);
+		/*background: linear-gradient(to right, #3a6186, #89253e);*/
+		background: #1c1c1c;
 		position: absolute;
 		width: 100%;
 		height: 100%;

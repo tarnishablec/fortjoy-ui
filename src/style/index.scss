@@ -27,8 +27,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
-  margin-top: var(--nav-height);
-  padding: 0 calc((100vw - var(--app-main-width-max)) / 2) 0;
+  padding: var(--nav-height) calc((100vw - var(--app-main-width-max)) / 2) 0;
   scroll-behavior: smooth;
 
   .scroll-detector {

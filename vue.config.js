@@ -4,7 +4,7 @@ module.exports = {
 	transpileDependencies: [
 	],
 	publicPath: process.env.NODE_ENV === 'production'
-		? '/fortjoy/'
+		? '/fortjoy-ui/'
 		: '/',
 	chainWebpack: (config) => {
 		config.resolve.alias

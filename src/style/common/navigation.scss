@@ -48,6 +48,7 @@ header.responsive-nav {
     span {
       transform: rotate(-90deg);
       font-size: 1.6rem;
+      user-select: none;
     }
   }
 

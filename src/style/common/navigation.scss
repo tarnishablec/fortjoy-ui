@@ -1,10 +1,11 @@
+@import "../variables.scss";
+
 header.responsive-nav {
   background: var(--nav-background-mobile);
   position: fixed;
   z-index: 999;
   width: 100%;
   height: var(--nav-height);
-
 
   .logo {
     margin: 0;
@@ -87,14 +88,12 @@ header.responsive-nav {
   }
 }
 
-
-@media screen and (min-width: 800px) {
+@media screen and (min-width: $thresholdWidth) {
   header.responsive-nav {
     background: transparent;
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    grid-template-columns: 1fr auto minmax(calc(var(--threshold-width) - 50px), 3fr) 1fr;
     transition: 0.2s;
-
 
     &.inverse {
       background: rgba(255, 255, 255, 0.8);
@@ -146,7 +145,7 @@ header.responsive-nav {
             }
 
             &::before {
-              content: '';
+              content: "";
               display: block;
               height: 5px;
               background: var(--common-text-color);
@@ -161,11 +160,9 @@ header.responsive-nav {
             &:hover::before {
               transform: scale(1, 1);
             }
-
           }
         }
       }
-
     }
   }
 }

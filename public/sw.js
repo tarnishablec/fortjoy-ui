@@ -1,8 +1,7 @@
 const staticCache = 'site-static-v1';
 const dynamicCache = 'site-dynamic-v1';
 const assets = [
-  "/",
-  "/index.html"
+  "./index.html"
 ];
 
 self.addEventListener("install", evt => {

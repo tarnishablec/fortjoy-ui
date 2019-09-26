@@ -1,6 +1,7 @@
 const staticCache = 'site-static-v1';
 const dynamicCache = 'site-dynamic-v1';
 const assets = [
+  "/",
   "/index.html"
 ];
 
@@ -20,7 +21,7 @@ self.addEventListener("activate", evt => {
       // console.log(keys);
       return Promise.all(
         keys
-          .filter(key => [staticCache, dynamicCache].indexOf(key) < 0)
+          .filter(key => !(key in [staticCache, dynamicCache]))
           .map(key => caches.delete(key))
       )
     })
@@ -34,7 +35,7 @@ self.addEventListener("fetch", evt => {
       cacheRes || fetch(evt.request).then(fetchRes =>
         caches.open(dynamicCache).then(cache => {
           cache.put(evt.request.url, fetchRes.clone());
-          limitCacheSize(dynamicCache, 30);               //limit cache size
+          // limitCacheSize(dynamicCache, 30);               //limit cache size
           return fetchRes;
         })
       )

@@ -52,16 +52,16 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 0.5rem;
-  background: transparent;
+  width: 5px !important;
+  height: 0.5rem !important;
+  background: transparent !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #a1a3a9;
-  border-radius: 1rem;
+  background-color: #a1a3a9 !important;
+  border-radius: 1rem !important;
 }
 
 ::-webkit-scrollbar-corner {
-  background: transparent;
+  background: transparent !important;
 }

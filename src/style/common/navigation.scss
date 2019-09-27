@@ -7,6 +7,10 @@ header.responsive-nav {
   width: 100%;
   height: var(--nav-height);
 
+  * {
+    user-select: auto;
+  }
+
   .logo {
     margin: 0;
     line-height: var(--nav-height);
@@ -17,6 +21,7 @@ header.responsive-nav {
       text-decoration: none;
       color: var(--common-text-color);
       top: 3px;
+      font-weight: 600;
       position: relative;
     }
   }
@@ -48,7 +53,6 @@ header.responsive-nav {
     span {
       transform: rotate(-90deg);
       font-size: 1.6rem;
-      user-select: none;
     }
   }
 
@@ -68,7 +72,10 @@ header.responsive-nav {
 
       li {
         line-height: 2.3rem;
-        padding: 0 1rem;
+        margin: 0 0.5rem;
+        padding: 0 0.5rem;
+        border-radius: 5px;
+
 
         a {
           display: block;
@@ -79,9 +86,9 @@ header.responsive-nav {
           opacity: 0;
           transition: opacity 0s;
 
-          &:hover {
+          &:active, &:hover {
+            background: rgba(0, 0, 0, 0.1);
             color: var(--common-text-color);
-            box-shadow: inset 0 -1px 0 rgba(255, 255, 250, 0.3);
           }
         }
       }
@@ -115,6 +122,10 @@ header.responsive-nav {
 
     .logo {
       grid-column: 2 / 3;
+
+      a {
+        font-weight: 600;
+      }
     }
 
     nav {

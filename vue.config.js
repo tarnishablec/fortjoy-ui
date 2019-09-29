@@ -14,9 +14,9 @@ module.exports = {
 	runtimeCompiler: true,
 	configureWebpack: {
 		plugins: [
-			new WorkboxPlugin.InjectManifest({
+			// new WorkboxPlugin.InjectManifest({
 
-			})
+			// })
 		]
 	}
 };

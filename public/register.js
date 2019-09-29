@@ -1,6 +1,6 @@
 if ("serviceWorker" in navigator) {
   console.log("support serviceWorker");
-  navigator.serviceWorker.register("sw.js").then(registration => {
+  navigator.serviceWorker.register("workbox-sw.js").then(registration => {
     console.log("service worker registered");
 
     return registration;

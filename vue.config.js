@@ -1,3 +1,5 @@
+const WorkboxPlugin = require("workbox-webpack-plugin")
+
 module.exports = {
 	transpileDependencies: [
 	],
@@ -9,5 +11,12 @@ module.exports = {
 		compress: true,
 		disableHostCheck: true,
 	},
-	runtimeCompiler: true
+	runtimeCompiler: true,
+	configureWebpack: {
+		plugins: [
+			new WorkboxPlugin.InjectManifest({
+
+			})
+		]
+	}
 };

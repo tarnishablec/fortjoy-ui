@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <button id="notify" class="button is-primary" @click="showNotify">Send Notify</button>
-    <button>Update SW</button>
+    <button @click="updateSw">Update SW</button>
     <HelloWorld msg="Welcome to Your Vue.js App" style="margin-top:1rem" />
     <div v-for="i in 20" :key="i">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cupiditate delectus eaque itaque libero quisquam unde
@@ -21,6 +21,11 @@ export default {
     HelloWorld
   },
   methods: {
+    updateSw() {
+      navigator.serviceWorker.getRegistration().then(reg => {
+        reg.update();
+      });
+    },
     showNotify() {
       navigator.serviceWorker.getRegistration().then(registration => {
         registration.showNotification("Hello", {

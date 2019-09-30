@@ -8,6 +8,10 @@ if ("serviceWorker" in navigator) {
   })
 }
 
+if ("PushManager" in window) {
+  console.log(window.PushManager)
+}
+
 askPermission();
 
 function askPermission() {
@@ -23,6 +27,24 @@ function askPermission() {
       throw new Error('We weren\'t granted permission.');
     }
   })
+}
+
+function subscribeUserToPush() {
+  return navigator.serviceWorker.getRegistration()
+  .then(function(registration) {
+    const subscribeOptions = {
+      userVisibleOnly: true,
+      // eslint-disable-next-line no-undef
+      applicationServerKey: urlBase64ToUint8Array(
+        'BMlraNKaQyuaOA3QZaRU3PZqXAVlMdUoWBNRUYt8P3r5iUylKsMs9s-QyXlj9xGCdq565vy4uR2gwA2lhFukKnM'
+      )
+    };
+    return registration.pushManager.subscribe(subscribeOptions);
+  })
+  .then(function(pushSubscription) {
+    console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
+    return pushSubscription;
+  });
 }
 
 // function simpleNotification() {

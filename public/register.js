@@ -2,8 +2,7 @@ if ("serviceWorker" in navigator) {
   console.log("support serviceWorker");
   navigator.serviceWorker.register("workbox-sw.js").then(registration => {
     console.log("service worker registered");
-
-    return registration;
+    // console.log(registration)
   }).catch(err => {
     console.error('Unable to register service worker.', err);
   })
@@ -26,13 +25,15 @@ function askPermission() {
   })
 }
 
-document.querySelector("#notify").addEventListener('click', () => {
-  simpleNotification();
-});
-
-function simpleNotification() {
-  new Notification("Hello PWA", {
-    body: "GOOD WORK",
-    icon: "./favicon-512x512.png"
-  });
-}
+// function simpleNotification() {
+//   swRegistration && swRegistration.showNotification(
+//     "Hello PWA", {
+//     body: "GOOD WORK",
+//     icon: "./favicon-512x512.png",
+//     tag: "request",
+//     actions: [
+//       { "action": "yes", "title": "Yes", "icon": "images/yes.png" },
+//       { "action": "no", "title": "No", "icon": "images/no.png" }
+//     ]
+//   });
+// }

@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <button id="notify" class="button is-primary">Send Notify</button>
+    <button id="notify" class="button is-primary" @click="showNotify">Send Notify</button>
+    <button>Update SW</button>
     <HelloWorld msg="Welcome to Your Vue.js App" style="margin-top:1rem" />
     <div v-for="i in 20" :key="i">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cupiditate delectus eaque itaque libero quisquam unde
@@ -18,7 +19,24 @@ export default {
   name: "home",
   components: {
     HelloWorld
-  }
+  },
+  methods: {
+    showNotify() {
+      navigator.serviceWorker.getRegistration().then(registration => {
+        registration.showNotification("Hello", {
+          body: "Did you make a $1,000,000 purchase at Dr. Evil...",
+          icon: "images/ccard.png",
+          vibrate: [200, 100, 200, 100, 200, 100, 400],
+          tag: "request",
+          actions: [
+            { action: "yes", title: "Yes", icon: "images/yes.png" },
+            { action: "no", title: "No", icon: "images/no.png" }
+          ]
+        });
+      });
+    }
+  },
+  mounted() {}
 };
 </script>
 

@@ -10,14 +10,21 @@ if (workbox) {
 
 workbox.routing.registerRoute(
   /\.js$/,
-  new workbox.strategies.NetworkFirst({
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: 'js-cache',
   })
 );
 
 workbox.routing.registerRoute(
-  /\.css$/,
+  /\//,
   new workbox.strategies.NetworkFirst({
+    cacheName: 'html-cache',
+  })
+);
+
+workbox.routing.registerRoute(
+  /\.css$/,
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: 'css-cache'
   })
 );
